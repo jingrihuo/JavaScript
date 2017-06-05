@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery不刷新分页动态数据表格代码</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/table.js"></script>
+<script src="js/jquery.page.js"></script>
+
+</head>
+
+<body>
+
+<div class="table_body"></div>
+<div id="page_navigation"></div>
+
+<div style="text-align:center;margin:1px 0; font:normal 14px/20px 'MicroSoft YaHei';">
+<script type="text/javascript">  
+    
+    window.onload = function validate(){  
+     var div=document.getElementById("div");  
+     var xmlhttp;  
+     var table=document.getElementById('table');  
+  
+        if (window.XMLHttpRequest) {  
+            xmlhttp = new XMLHttpRequest();  
+        } else {  
+            xmlhttp = new ActiveObject("Microsoft.XMLHTTP");  
+        }  
+        xmlhttp.onreadystatechange = function() {  
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {  
+                var x = xmlhttp.responseText  
+ 
+                var sd = eval("(" + x + ")");  
+  				
+                var arr = new Array();  
+                var i = 0;  
+                $(document).Table('.table_body','re',sd.as,4,sd,['序号','班级编号','学校编号','班级描述'],[[,,],[,,],[,,]]);
+                $(document).PaginBar('page_navigation','table_body',1);
+            }  
+        }  
+        var url = "json";  
+        xmlhttp.open("POST", url, false);  
+        xmlhttp.send();  
+  
+    }  
+</script>  
+</div>
+</body>
+</html>
+
+

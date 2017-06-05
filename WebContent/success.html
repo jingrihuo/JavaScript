@@ -1,0 +1,46 @@
+<!DOCTYPE >
+<html>
+<head>
+<script src="scriptaculous/lib/prototype.js" type="text/javascript"></script>
+<script src="scriptaculous/src/effects.js" type="text/javascript"></script>
+<script type="text/javascript" src="validation.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+<!--
+// Alternative Style: Working With Alternate Style Sheets
+// http://www.alistapart.com/articles/alternate/
+
+//-->
+//]]>
+</script>
+<link title="style1" rel="stylesheet" href="style4.css" type="text/css" />
+<link title="style2" rel="alternate stylesheet" href="style2.css" type="text/css" />
+<link title="style3" rel="alternate stylesheet" href="style3.css" type="text/css" />
+<script>
+    window.onload=function(){
+        setTimeout( function(){
+        this.window.opener = null;  
+        window.close();  
+        }, 5 * 1000 );//延迟5000毫米
+    }
+</script>
+</head>
+<body>
+    <div class="style_changer">
+    	<div class="style_changer_text">Themes:</div>
+        <input type="submit" value="1" onclick="setActiveStyleSheet('style1');" />
+        <input type="submit" value="2" onclick="setActiveStyleSheet('style2');" />
+        <input type="submit" value="3" onclick="setActiveStyleSheet('style3');" />
+    </div>
+
+	<div class="form_content">
+    
+    <fieldset>
+        <p style="font-size:30px;">数据已经提交成功，5s后将自动关闭本页面！</p>
+    </fieldset>
+    
+    
+    </div>
+    
+</body>
+</html> 
