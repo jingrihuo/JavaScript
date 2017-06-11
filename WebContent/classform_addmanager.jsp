@@ -11,7 +11,7 @@
 <link title="style2" rel="alternate stylesheet" href="style2.css" type="text/css" />
 <link title="style3" rel="alternate stylesheet" href="style3.css" type="text/css" />
 <script>
-	var manageraccount2=<%=request.getParameter("manageraccount")%>;
+	var manageraccount2 = <%=request.getParameter("manageraccount")%>;
 	if(manageraccount2==null){
 		self.location='404.html'; 
 		}

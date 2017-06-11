@@ -56,11 +56,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <script src="js/jquery.min.js"></script>
-<script src="js/school.js"></script>
+<script src="js/school2.js"></script>
 <script src="js/jquery.page1.js"></script>
 <style>
 	.re {
-		width: 90%;
+		width: 80%;
 	}
 </style>
 

@@ -70,79 +70,33 @@
             {c = c % 60;b += 1};
         setTimeout(function(){timedCount('demo');}, 1000);
     }
-		
-		window.onload = function validate() {
-			
-			var count;
-			var div = document.getElementById("div");
-			var xmlhttp;
-			var table = document.getElementById('table');
-
-			if (window.XMLHttpRequest) {
-				xmlhttp = new XMLHttpRequest();
-			} else {
-				xmlhttp = new ActiveObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					var x = xmlhttp.responseText
-
-					var sd = eval("(" + x + ")");
-
-					var arr = new Array();
-					var i = 0;
-					count = sd.count;
-					$(document).Table('.table_body', 're', count, 5, sd,
-							[ '序号', '选中情况', '管理员账号', '学校', '管理员名称' ],
-							[ [ , , ], [ , , ], [ , , ] ]);
-					$(document).PaginBar('page_navigation', 'table_body', 20);
-				}
-			}
-			var url = "webservlet?method=searchmanager";
-			xmlhttp.open("POST", url, false);
-			xmlhttp.send();
-
+	window.onload = function validate() {
+		var count;
+		var div = document.getElementById("div");
+		var xmlhttp;
+		var table = document.getElementById('table');
+		if (window.XMLHttpRequest) {
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			xmlhttp = new ActiveObject("Microsoft.XMLHTTP");
 		}
-		/*function sendAjax() {
-			//构造表单数据
-			var formData = new FormData();
-			formData.append('manageraccount', $("#f1").value);
-			formData.append('schoolid', $("#f2").value);
-			formData.append('managername', $("#hidden1").value);
-			//创建xhr对象 
-			var xhr = new XMLHttpRequest();
-			//设置xhr请求的超时时间
-			xhr.timeout = 3000;
-			//设置响应返回的数据格式
-			xhr.responseType = "json";
-			//创建一个 post 请求，采用异步
-			xhr.open('POST', 'webservlet?method=searchmanager', true);
-			//注册相关事件回调处理函数
-			xhr.onreadystatechange = function() {
-				if (this.status == 200 || this.status == 304) {
-					//删除原有元素再次添加元素
-					var box = document.getElementById("table_by");
-					var box2 = document.getElementById("page_navigation");
-					$(box).children(selector).remove();
-					$(box2).children(selector).remove();
-
-					var x = xmlhttp.responseText
-
-					var sd = eval("(" + x + ")");
-
-					var arr = new Array();
-					var i = 0;
-					$(document).Table('.table_body', 're', count, 5, sd,
-							[ '序号', '选中情况', '管理员账号', '学校', '管理员名称' ],
-							[ [ , , ], [ , , ], [ , , ] ]);
-					$(document).PaginBar('page_navigation', 'table_body', 20);
-
-				}
-			};
-
-			//发送数据
-			xhr.send(formData);
-		}*/
+		xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			var x = xmlhttp.responseText;
+			var sd = eval("(" + x + ")");
+			var arr = new Array();
+			var i = 0;
+			count = sd.count;
+			$(document).Table('.table_body', 're', count, 5, sd,
+			[ '序号', '选中情况', '管理员账号', '学校', '管理员名称' ],
+			[ [ , , ], [ , , ], [ , , ] ]);
+			$(document).PaginBar('page_navigation', 'table_body', 20);
+			}
+		}
+		var url = "webservlet?method=searchmanager";
+		xmlhttp.open("POST", url, false);
+		xmlhttp.send();
+	}
 		function sendAjax() {
 
 			var count;

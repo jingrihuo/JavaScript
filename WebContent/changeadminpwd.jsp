@@ -8,12 +8,6 @@
 <script type="text/javascript" src="validation.js"></script>
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script type="text/javascript">
-//<![CDATA[
-<!--
-// Alternative Style: Working With Alternate Style Sheets
-// http://www.alistapart.com/articles/alternate/
-//-->
-//]]>
 </script>
 <link title="style1" rel="stylesheet" href="style4.css" type="text/css" />
 <link title="style2" rel="alternate stylesheet" href="style2.css" type="text/css" />

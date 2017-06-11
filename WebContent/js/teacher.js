@@ -97,7 +97,7 @@
 		$(divId).append("</table>");
 		// 样式
 		$(".re th:eq(0),#bank th:eq(0)").css({"width":"50px","text-align":"center"});
-		$("#re tr td:last-child()").css({"width":"50px","margin":"0 auto","vertical-align": "middle"});
+		$("#re tr td:last-child()").css({"width":"150px","margin":"0 auto","vertical-align": "middle"});
 		$(".re tr td:first-child()").css({"background":"linear-gradient(to bottom, #f9f9f9 , #f1f1f1)","text-align":"center"});
 		
     }//table结束  
